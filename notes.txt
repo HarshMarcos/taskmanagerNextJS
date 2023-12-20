@@ -1,0 +1,23 @@
+App->Folder->Page.js -> localhost/Folder
+
+loading.js is by default server side component but you can make it client side component
+
+How to make APIs in NEXTJS -> make route.js file to make APIs 
+
+export function POST,DELETE,PUT
+
+Dynamic Routes -> [userid] 
+
+
+NextRequest Object & NextResponse Object
+
+
+Task Model : title, content, addedDate, status-> pending,completed
+
+User Model link to Task Model
+
+1st Approach -> when u r creating user put task property there only in array as objects format
+dis-> you always get every information even if u dont want
+
+2nd Approach -> create users and task separately and link them both wiht help of key
+whenever we create there is unique _id to user 
