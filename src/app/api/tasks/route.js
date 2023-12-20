@@ -1,8 +1,21 @@
+import { getResponseMessage } from "@/helper/responseMessage";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
 
 //Get all the tasks
-export async function GET() {
+export async function GET(request) {
+
+    try {
+        const tasks = await Task.find();
+        return NextResponse.json({
+            tasks,
+            message:"All Tasks",
+            success:true
+        })
+    } catch (error) {
+        console.log(error)
+        return getResponseMessage("Error in getting data!!",404,false);
+    }
 
 }
 
