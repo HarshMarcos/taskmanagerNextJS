@@ -21,3 +21,8 @@ dis-> you always get every information even if u dont want
 
 2nd Approach -> create users and task separately and link them both wiht help of key
 whenever we create there is unique _id to user 
+
+
+Server side component 
+
+client side component
