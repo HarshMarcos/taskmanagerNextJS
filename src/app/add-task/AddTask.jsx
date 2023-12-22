@@ -43,6 +43,14 @@ const AddTask =  () => {
     
   }
 
+  const handleReset = () => {
+    setTask({
+      title:'',
+      content:'',
+      status:''
+    })
+  }
+
   return (
     <div className='text-white grid grid-cols-12 justify-center'>
       <div className='col-span-6 col-start-4 shadow-md p-5'>
@@ -59,6 +67,7 @@ const AddTask =  () => {
             <label htmlFor='task_title' className='block text-sm font-medium mb-2'>Title</label>
             <input type='text' className='w-full p-3.5 rounded-full bg-blue-950 focus:ring-blue-950 border border-blue-950 ps-3' id='task_title' 
               name="task_title" 
+              placeholder='Enter title here...'
               onChange={(event)=>{
                 setTask({
                   ...task,
@@ -73,6 +82,7 @@ const AddTask =  () => {
             <label htmlFor='task_content' className='block text-sm font-medium mb-2'>Content</label>
             <textarea type='text' className='w-full p-3.5 rounded-3xl bg-blue-950 focus:ring-blue-950 border border-blue-950 ps-3' id='task_content' rows={5}
               name='task_content'
+              placeholder='Enter content here...'
               onChange={(event) => {
                 setTask({
                   ...task,
@@ -103,9 +113,9 @@ const AddTask =  () => {
             </select>
           </div>
 
-          <div className='mt-20 flex justify-center space-x-5'>
-            <button className='bg-blue-600 py-2 px-3 rounded-lg hover:bg-blue-950'>Add Todo</button>
-            <button className='bg-red-500 py-2 px-3 rounded-lg hover:bg-red-950'>Clear</button>
+          <div className='mt-10 flex justify-center space-x-5'>
+            <button type='submit' className='bg-blue-600 py-2 px-3 rounded-lg hover:bg-blue-950'>Add Todo</button>
+            <button type='reset'  className='bg-red-500 py-2 px-3 rounded-lg hover:bg-red-950' onClick={handleReset}>Clear</button>
           </div>
           {/* {
             JSON.stringify(task)
