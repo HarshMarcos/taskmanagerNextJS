@@ -41,9 +41,10 @@ const Login = () => {
 
         } catch (error) {
             console.log(error)
-            toast.error("Password not matched", {
+            toast.error(error.response.data.message, {
                 position:'top-center'
             })
+            console.log(error.response.data.message)
         }
         setData({
             email:'',

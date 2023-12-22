@@ -2,8 +2,11 @@ import { NextResponse } from "next/server";
 import { User } from "@/models/user";
 import bcrypt from 'bcryptjs'
 import jwt from "jsonwebtoken";
+import { connectdb } from "@/helper/db"
 
+connectdb();
 export async function POST(request){
+    // connectdb()
 
     const { email, password } = await request.json();
     try {
